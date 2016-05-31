@@ -13,16 +13,13 @@
        up.setFolderUpload("arquivos");
        if(up.formProcess(getServletContext(), request))
        {
-           
-            //Arquivos
-           out.print(up.getFiles().get(0) + "<br/>");
-           //Outros campos do form
-           out.print(up.getForm().get("txtNome")+ "<br/>");
-           out.print(up.getForm().get("txtEmail")+ "<br/>");
+           for(String file: up.getFiles())
+           {
+               out.print(file);
+           }
        }
        else
        {
-           
+           out.print("erro");
        }
 %>
-<img src="arquivos/<%=up.getFiles().get(0)%>" />

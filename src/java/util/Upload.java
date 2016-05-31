@@ -25,7 +25,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 public class Upload {
    private String folderUpload;
    private List<String> files;
-   private Map form ;
+   Map<String,String> form ;
 
 
     public List<String> getFiles() {
@@ -52,7 +52,7 @@ public class Upload {
     }
    
     public boolean formProcess(ServletContext sc, HttpServletRequest request) {
-        this.form = new HashMap();
+        this.form = new HashMap<String,String>();
         Map<String, String> itemForm;
         
         File file;
